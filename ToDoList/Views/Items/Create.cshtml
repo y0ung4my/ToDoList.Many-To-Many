@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+<div>
 @model ToDoList.Models.Item
 
 <h4>Add a new task</h4>
@@ -16,4 +16,6 @@
 
   <input type="submit" value="Add new item" class="btn btn-default" />
 }
+
 <p>@Html.ActionLink("Show all items", "Index")</p>
+</div>
