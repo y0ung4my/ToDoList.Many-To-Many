@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ToDoList.Models
 {
@@ -12,7 +13,9 @@ namespace ToDoList.Models
         public int ItemId { get; set; }
         public string Description { get; set; }
         public bool Completed {get; set; }
+        public string DateDue { get; set; }
 
         public virtual ICollection<CategoryItem> JoinEntities { get;}
+
     }
 }
