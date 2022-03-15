@@ -2,8 +2,9 @@
   Layout = "_Layout";
 }
 <div>
+@using System.Linq;
 @using ToDoList.Models;
-@model List<ToDoList.Models.Item>;
+@model List<ToDoList.Models.Item>
 
 <h1>Items</h1>
 
@@ -12,10 +13,14 @@
   <h3>No items have been added yet!</h3>
 } 
 
-@foreach (Item item in Model)
+@foreach (Item item in Model.OrderBy(item => item.DateDue))
 {
-  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId })</li>
+  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) @Html.Raw(item.DateDue)</li>
 }
 
 <p>@Html.ActionLink("Add new item", "Create")</p>
 </div>
+
+
+
+
